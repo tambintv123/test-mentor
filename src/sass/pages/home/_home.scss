@@ -1,0 +1,53 @@
+.header {
+    background-color: #000000;
+    border: 1px solid #000000;
+    .container {
+        width: 80%;
+        margin: auto;
+        .flexDiv {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .logo {
+                width: 116px;
+                height: 32px;
+            }
+            .headerContent {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                .cart {
+                    color: white;
+                }
+            }
+            .authText {
+                color: white;
+                font-weight: 300;
+                font-size: 16px;
+            }
+        }
+       
+    }
+}
+.container {
+    width: 80%;
+        margin: auto;
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 0;
+
+  
+    .nav-item  .nav-link:hover {
+        text-decoration: underline;
+    }
+    .nav-item  .nav-link:active {
+        text-decoration: underline;
+        font-weight: 600;
+    }
+}
