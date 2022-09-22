@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { actGetDetailProduct } from "redux/actions/getDetailProduct";
@@ -8,6 +8,8 @@ export default function DetailProduct() {
   const { id } = useParams();
   const { detailProduct } = useSelector((state) => state.detailProduct);
 
+  const [count, setCount] = useState(1);
+  const [toggle, setToggle] = useState(true);
   useEffect(() => {
     dispatch(actGetDetailProduct(id));
   }, []);
@@ -15,7 +17,14 @@ export default function DetailProduct() {
   const renderListSizes = () => {
     return detailProduct?.size?.map((item, index) => {
       return (
-        <button key={index} type="button" className="btnSize ">
+        <button
+          key={index}
+          type="button"
+          // onClick={() => {
+          //   setToggle(!toggle);
+          // }}
+          className={toggle ? "btnSize" : "btnSizeActive"}
+        >
           {item}
         </button>
       );
@@ -34,9 +43,26 @@ export default function DetailProduct() {
           <div className="listSizes">{renderListSizes()}</div>
           <h2 className="productPrice ">{detailProduct.price}$</h2>
           <div className="btnListCount">
-            <button className="btnCount">+</button>
-            <p>1</p>
-            <button className="btnCount">-</button>
+            <button
+              className="btnCount"
+              onClick={() => {
+                setCount(count + 1);
+              }}
+            >
+              +
+            </button>
+            <p>{count}</p>
+            <button
+              className="btnCount"
+              onClick={() => {
+                setCount(count - 1);
+                if (count === 1) {
+                  setCount(1);
+                }
+              }}
+            >
+              -
+            </button>
           </div>
           <button type="button" className=" btnAddToCart">
             Add to cart

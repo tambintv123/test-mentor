@@ -1,24 +1,41 @@
 import React from "react";
 import { withFormik } from "formik";
 import * as Yup from "yup";
-import { connect, useDispatch } from "react-redux";
+import { connect, useDispatch, useSelector } from "react-redux";
 import { actRegister } from "redux/actions/register";
 import { Navigate, useNavigate } from "react-router-dom";
 import "../../sass/pages/register/_register.scss";
 
-function RegisterPage(props) {
-  const { values, errors, handleChange, handleSubmit } = props;
-  const dispatch = useDispatch();
+function RegisterPageWrapper() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { error } = useSelector((state) => state.register);
+  const message = error?.response.data.message;
+  return (
+    <RegisterWithFormik
+      error={message}
+      dispatch={dispatch}
+      navigate={navigate}
+    />
+  );
+}
 
+function RegisterPage(props) {
+  const { error, errors, handleChange, handleSubmit } = props;
   if (localStorage.getItem("User")) {
     return <Navigate replace to="/" />;
   }
+  console.log(props);
+
+  const renderNoti = () => {
+    return error && <div className="message">{error}</div>;
+  };
 
   return (
     <div className="container">
       <h1 className="titleRegister">Register</h1>
       <div className="registerBox ">
+        {renderNoti()}
         <form onSubmit={handleSubmit}>
           <div className="boxContent ">
             <div>
@@ -138,7 +155,7 @@ const RegisterWithFormik = withFormik({
     password: "",
     name: "",
     phone: "",
-    gender: null,
+    gender: true,
   }),
 
   validationSchema: Yup.object().shape({
@@ -153,15 +170,14 @@ const RegisterWithFormik = withFormik({
       .oneOf([Yup.ref("password")], "Passwords does not match"),
     name: Yup.string().required("Name is required !"),
     phone: Yup.string().required("Phone is required !"),
-    gender: Yup.boolean().required("Gender is required !"),
+    gender: Yup.string().required("Gender is required !"),
   }),
 
   handleSubmit: (values, { props, setSubmitting }) => {
-    // props.dispatch(actRegister(values));
-    console.log(values);
+    props.dispatch(actRegister(values, props.navigate));
   },
 
   displayName: "Register",
 })(RegisterPage);
 
-export default connect()(RegisterWithFormik);
+export default connect()(RegisterPageWrapper);

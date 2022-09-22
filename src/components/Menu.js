@@ -36,6 +36,12 @@ export default function Menu() {
         >
           Sport
         </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "active" : "inactive")}
+          to="/logic"
+        >
+          Logic Page
+        </NavLink>
       </div>
     </div>
   );

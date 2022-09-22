@@ -7,11 +7,19 @@
 }
 .registerBox {
     background-color: white;
-    padding: 2.5rem;
     border-radius: 10px;
     width: 100%;
     margin: auto;
     box-shadow: 0 4px 6px -1px #0000001a;
+    .message {
+        text-align: center;
+        padding: 1rem 2rem;
+        border-radius: 10px;
+        border: 1px solid rgba(215, 204, 204, 0.507);
+        color: red;
+        font-weight: 500;
+        margin-bottom: 2rem;
+    }
     .boxContent {
         display: grid;
         grid-template-columns: repeat(2, 1fr);

@@ -35,45 +35,113 @@ export default function Logic() {
       idParent: "Fol3_2_2_3_1_1",
     },
   ];
-  const render = () => {
-    return arrCategory?.reduce((prev, next) => {
-      //   prev[next.parentId]
-      //     ? prev[next.parentId].push(next)
-      //     : (prev[next.parentId] = [next]);
-      //   console.log(prev[next.id]);
-      //   console.log(prev[next.idParent]);
 
-      console.log(next);
-      if (prev[next.id] === prev[next.idParent]) {
-        return (
-          <ul>
-            <li style={{ listStyle: "none" }}>
-              {prev[next.name]}
-              <ul>
-                <li style={{ listStyle: "none" }}>{prev[next.name]}</li>
-              </ul>
-            </li>
-          </ul>
-        );
-      }
-    }, []);
-  };
+  // const demp = () => {
+  //   return arrCategory.reduce((array, item) => {
+  //     if(item.idParent === null) {
+  //       return [...array, item];
+  //     }
+  //     const parent = array.find((ele) => ele.id === item.idParent)
+  //   },[])
+  // }
 
-  //   const demo = () => {
-  //     let newArr = [];
-  //     for (let i = 0; i < arrCategory.length; i++) {
-  //       for (let j = 1; j < arrCategory.length; j++) {
-  //         if (arrCategory[i].id === arrCategory[j].idParent) {
-  //           newArr = [...newArr, arrCategory[i].name, arrCategory[j].name];
-  //           //   newArr = newArr.push(arrCategory[i].name);
-  //           //   newArr = newArr.push(arrCategory[j].name);
-
-  //           //   console.log(newArr);
-  //           continue;
-  //         }
+  // const demo = (arrCategory) => {
+  //   let newArr = [];
+  //   for (let i = 0; i < arrCategory.length; i++) {
+  //     for (let j = 1; j < arrCategory.length; j++) {
+  //       if (arrCategory[i].id === arrCategory[j].idParent) {
+  //         newArr = [...newArr, arrCategory[i], arrCategory[j]];
+  //         continue;
   //       }
   //     }
-  //   };
+  //   }
+  //   return newArr;
+  // };
 
-  return <div>{render()}</div>;
+  // const test = demo(arrCategory);
+  // // console.log(test);
+
+  // const step1 = test.reduce((unique, item) => {
+  //   return unique.includes(item) ? unique : [...unique, item];
+  // }, []);
+
+  // const res2 = demo(step1);
+  // const step2 = res2.reduce((unique, item) => {
+  //   return unique.includes(item) ? unique : [...unique, item];
+  // }, []);
+
+  // const res3 = demo(step2);
+  // const step3 = res3.reduce((unique, item) => {
+  //   return unique.includes(item) ? unique : [...unique, item];
+  // }, []);
+
+  // const res4 = demo(step3);
+  // const step4 = res4.reduce((unique, item) => {
+  //   return unique.includes(item) ? unique : [...unique, item];
+  // }, []);
+
+  // const res5 = demo(step4);
+  // const step5 = res5.reduce((unique, item) => {
+  //   return unique.includes(item) ? unique : [...unique, item];
+  // }, []);
+
+  // const res6 = demo(step5);
+  // const step6 = res6.reduce((unique, item) => {
+  //   return unique.includes(item) ? unique : [...unique, item];
+  // }, []);
+
+  // // const cached = {};
+  // // const children = [];
+
+  // // for (let i = 0; i < arrCategory.length; i++) {
+  // //   const item = {
+  // //     id: arrCategory[i].id,
+  // //     name: arrCategory[i].name,
+  // //     idParent: arrCategory[i].idParent,
+  // //     items: arrCategory[i]?.map((ele) => ({ id: ele, items: [] })),
+  // //   };
+
+  // //   if (cached[item.idParent]) {
+  // //     cached[item.idParent].arrCategory = item.items;
+  // //   } else {
+  // //     children.push(item);
+  // //     cached[item.idParent] = item;
+  // //   }
+
+  // //   for (let j = 0; j < item.items.length; j++) {
+  // //     cached[item.items[j].idParent] = item.items[j];
+  // //   }
+  // // }
+
+  // // const result = {
+  // //   items: children,
+  // // };
+  // // console.log(result);
+
+  return (
+    <div className="container">
+      <div>
+        {/* {step6?.map((item, index) => {
+          return (
+            <ul key={index}>
+              <li style={{ listStyle: "none" }}>
+                <i className="fa fa-folder">
+                  {" "}
+                  <span style={{ marginLeft: "10px" }}>{item.name}</span>
+                </i>
+                <ul>
+                  <li style={{ listStyle: "none" }}>
+                  <i className="fa fa-folder">
+                  {" "}
+                  <span style={{ marginLeft: "10px" }}>{}</span>
+                </i>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          );
+        })} */}
+      </div>
+    </div>
+  );
 }

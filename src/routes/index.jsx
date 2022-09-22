@@ -42,6 +42,11 @@ const routes = [
     layout: MainLayout,
     element: lazy(() => import("../pages/HomePage/index")),
   },
+  {
+    path: "/logic",
+    layout: MainLayout,
+    element: lazy(() => import("../pages/Logic/index")),
+  },
 ];
 
 function RouteMain() {
