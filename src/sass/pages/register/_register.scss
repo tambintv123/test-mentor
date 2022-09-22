@@ -1,0 +1,54 @@
+
+.titleRegister {
+    margin: 0.75rem;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 600;
+}
+.registerBox {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 10px;
+    width: 100%;
+    margin: auto;
+    box-shadow: 0 4px 6px -1px #0000001a;
+    .boxContent {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+    .boxInput {
+        margin-bottom: 1.25rem;
+        .label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: rgb(64, 64, 64);
+        }
+        .input {
+            border: 1px solid rgba(189, 185, 185, 0.88);
+            padding: 0.75rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+            width: 100%;
+        }
+        .radioInput {
+            margin-top: 1.5rem;
+        }
+        .female {
+            margin-left: 2rem;
+        }
+        .textError {
+            color: red;
+        }
+    }
+    .btnSubmit {
+        width: 100%;
+        color: white;
+        font-weight: bold;
+        padding: 1rem;
+        border-radius: 10px;
+        background-color: rgba(62, 184, 232, 0.777);
+
+    }
+}

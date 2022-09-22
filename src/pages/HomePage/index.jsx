@@ -1,14 +1,12 @@
 import Carousel from "components/Carousel";
-import Header from "components/Header";
-import Menu from "components/Menu";
 import React from "react";
+import ListProduct from "container/listProduct";
 
 export default function HomePage() {
   return (
     <div>
-      <Header />
-      <Menu />
       <Carousel />
+      <ListProduct />
     </div>
   );
 }

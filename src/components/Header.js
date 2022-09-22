@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "./../sass/pages/home/_home.scss";
 
 export default function Header() {
@@ -7,7 +8,7 @@ export default function Header() {
       <div className="container">
         <div className="flexDiv">
           <div className="logo">
-            <img src="./assets/image/logo.png" alt="" />
+            <img src="../assets/image/logo.png" alt="" />
           </div>
           <div className="headerContent">
             <div className="cart">
@@ -15,10 +16,14 @@ export default function Header() {
               <span>(1)</span>
             </div>
             <div className="login">
-              <h3 className="authText">Login</h3>
+              <NavLink className="text-white" to="/">
+                Login
+              </NavLink>
             </div>
             <div className="register">
-              <h3 className="authText">Register</h3>
+              <NavLink className="text-white" to="/register">
+                Register
+              </NavLink>
             </div>
           </div>
         </div>

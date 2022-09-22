@@ -1,6 +1,7 @@
 .header {
     background-color: #000000;
     border: 1px solid #000000;
+    padding: 1rem 0;
     .container {
         width: 80%;
         margin: auto;
@@ -29,25 +30,210 @@
        
     }
 }
+.footer {
+    margin-top: 4rem;
+}
+
 .container {
     width: 80%;
-        margin: auto;
+     margin: auto;
+     
+     .contentFooter {
+        border-left: 1px solid rgb(157, 154, 154);
+        padding: 0 15px;
+     }
+
+     .ProductList {
+        margin: 2rem;
+        .ListProductTitle {
+            font-size: 40px;
+            font-weight: 400;
+            text-align: center;
+         }
+     }
+     .ListProductContent {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+     }
 }
 
 .navbar-nav {
+    padding: 1rem 0;
     display: flex;
     list-style: none;
     align-items: center;
     justify-content: flex-start;
     gap: 20px;
     padding: 0;
-
-  
-    .nav-item  .nav-link:hover {
-        text-decoration: underline;
+    margin-top: 1rem;
+   
+    a {
+        color: black;
     }
-    .nav-item  .nav-link:active {
+    a.active {
         text-decoration: underline;
         font-weight: 600;
+        color: black;
+    }
+
+    a.inactive {
+        color: black;
     }
 }
+
+.carousel {
+    background-image: url('./../../../../public/assets/image/carousel.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+   position: relative;
+   .imageShoes {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+   }
+   .carouselContent {
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    .carouselTitle {
+        font-size: 40px;
+        font-weight: 300;
+        margin-bottom: 1px;
+        line-height:  48.41px;
+    }
+    .carouselDescription {
+        font-size: 20px;
+        font-weight: 300;
+    }
+    .btnBuyNow {
+        margin-top: 1rem;
+        padding: 10px 25px;
+        color: white;
+        background-color:#F8B653 ;
+    }
+   }
+   .arrowLeft {
+    position: absolute;
+    left: 18px;
+    top: 241.13px;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    transform: rotate(-90deg);
+    border-bottom: 30px solid rgba(0, 0, 0, 0.24);
+    box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);    
+   }
+   .arrowRight {
+    position: absolute;
+    left: 1345px;
+    top: 250px;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    transform: rotate(90deg);
+    border-bottom: 30px solid rgba(0, 0, 0, 0.24);
+    box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);  
+   }
+  
+}
+
+
+
+.dots {
+    
+    position: absolute;
+    bottom: 0;
+    .dotsItem:nth-child(1) {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        left: 663px;
+        bottom: 110px;
+        border: 1px solid rgba(0, 0, 0, 0.13);
+        
+        border-radius: 50%;
+    }
+    .dotsItem:nth-child(2) {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        left: 693px;
+        bottom: 110px;
+        border: 1px solid rgba(0, 0, 0, 0.13);
+        
+        border-radius: 50%;
+    }
+    .dotsItem:nth-child(3) {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        left: 726px;
+        bottom: 110px;
+        border: 1px solid rgba(0, 0, 0, 0.13);
+        
+        border-radius: 50%;
+    }
+   }
+.listButtons {
+    display: flex;
+    .btnCardBuy {
+        background-color: #F8B653;
+        padding: 0.75rem;
+        font-weight: 500;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        width: 100%;
+    }
+    .btnCardPrice {
+        background-color: rgba(222, 221, 220, 1);
+        padding: 0.75rem;
+        font-weight: 500;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+        width: 100%;
+    }
+}
+
+
+
+.footer {
+    width: 1440px;
+    height: 242px;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px -1px #0000001a;
+    border: 1px solid rgba(221, 220, 220, 0.786);
+    .cardImage {
+        object-fit: cover;
+        border-radius: 10px;
+        height: 18rem;
+        width: 100%;
+        object-position: center;
+    }
+    .cardContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1.5rem;
+        gap: 20px;
+        .cardTitle {
+            font-size: 1.875rem; 
+            line-height: 2rem;
+            height: 5rem;
+        }
+        .cardDescription {
+            color: rgba(72, 72, 72, 0.859);
+        }
+    }
+}
+
+
